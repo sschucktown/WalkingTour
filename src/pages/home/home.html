@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color= "primary">
+    <ion-title>
+MUSC Historic Walking Tour
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+ <ion-list *ngIf= "locations != 0">  
+	<ion-item *ngFor= "let Location of locations" 
+		(click)="detailsPage(Location.code);" site-push> 
+		<ion-thumbnail item-start>
+		<img [src]= "Location.profilePic"> 
+		</ion-thumbnail>
+		<h2>{{Location.name}}</h2>
+		</ion-item>
+	</ion-list>
+</ion-content>
+

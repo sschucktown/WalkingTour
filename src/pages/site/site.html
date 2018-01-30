@@ -1,0 +1,35 @@
+
+<ion-header>
+
+  <ion-navbar color= "primary">
+    <ion-title>Historical Site</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding *ngIf="location !=0">
+	<ion-card>
+	<ion-card-content>
+	<ion-card-title>
+			{{location.name}}
+	</ion-card-title>
+	<ion-slides pager = "true">
+		<ion-slide *ngFor= "let slide of location.images">
+			<img src = "{{slide.image}}" />
+			</ion-slide>
+		</ion-slides>
+		<p>{{location.about}}</p>
+		<p> </p>
+		<p> </p>
+		<p> {{location.content}}</p>
+		<button ion-button icon-left (click) ="navigate()">
+			<ion-icon name="navigate">
+			</ion-icon>
+			Navigate
+		</button>
+	</ion-card-content>	
+		
+	</ion-card>
+
+</ion-content>
